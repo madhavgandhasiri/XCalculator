@@ -6,7 +6,10 @@ function Button({ text, setExpression, setResult, expression }) {
     if(text === 'C'){
       setExpression("");
       setResult("");
-    }else if(text === "="){
+    }else if(text === "=" && expression === ""){
+      setResult("Error")
+    }
+    else if(text === "="){
       try{
         setResult(eval(expression).toString());
       }catch(error){
